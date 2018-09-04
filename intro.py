@@ -1,37 +1,4 @@
-#Corey Videos texts
-
-# greeting = 'Hello'
-# name = 'Vignesh'
-
-# message = f'{greeting} ,{name}. Welcome!'
-
-# print(message)
-
-# num = 3
-# print(type(num))
-
-
-# courses =['a','b','c','d']
-# courses_2=['f','g']
-# courses.extend(courses_2)
-# courses.sort(reverse=True)
-# #print('h' in courses)
-
-# cou_str = ','.join(courses)
-# print(cou_str[1])
-
-# for index, item in enumerate(courses , start =1):
-#     print (index, item)
-
-
-# student ={'name':'John','age': 25}
-
-
-# student.update({'phone':'4444444','state':'CA'})
-# # print(student.get('phone'))
-
-# age= student.pop('age')
-# print(age)
+# Leetcode
 
 # def findNumber(l, r):
 #     a=[]
