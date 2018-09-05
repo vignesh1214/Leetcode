@@ -342,19 +342,39 @@
 
 # print(findMinDifference(["23:59","00:00"]))
 
-def search(alist, item):
-    first = 0
-    last = len(alist)-1
+# def search(alist, item):
+#     first = 0
+#     last = len(alist)-1
 
-    while first<=last:
-        midpoint = (first + last)//2
-        if alist[midpoint] == item:
-                return midpoint
-        else:
-            if item < alist[midpoint]:
-                last = midpoint-1
+#     while first<=last:
+#         midpoint = (first + last)//2
+#         if alist[midpoint] == item:
+#                 return midpoint
+#         else:
+#             if item < alist[midpoint]:
+#                 last = midpoint-1
+#             else:
+#                 first = midpoint+1
+#     return -1
+
+# print(search([1,2,4,5,6],2))
+
+def multiply(num1, num2):
+    for i in range(len(num2)-1,0,-1):
+        number1=0
+        for j in range(len(num1)-1,0,-1):
+            print(num1[i],num2[i])
+            sum1=0
+            carry=0
+            z=int(num1[i]) * int(num2[j])
+            if z> 10:
+                carry= z%10
+                sum1= z//10
+                print(carry,sum1)
             else:
-                first = midpoint+1
-    return -1
+                carry = z
+            number1+=carry
+            print(number1)
 
-print(search([1,2,4,5,6],2))
+
+print(multiply('123','456'))
