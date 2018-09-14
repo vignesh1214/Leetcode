@@ -359,22 +359,43 @@
 
 # print(search([1,2,4,5,6],2))
 
-def multiply(num1, num2):
-    for i in range(len(num2)-1,0,-1):
-        number1=0
-        for j in range(len(num1)-1,0,-1):
-            print(num1[i],num2[i])
-            sum1=0
-            carry=0
-            z=int(num1[i]) * int(num2[j])
-            if z> 10:
-                carry= z%10
-                sum1= z//10
-                print(carry,sum1)
-            else:
-                carry = z
-            number1+=carry
-            print(number1)
+# def multiply(num1, num2):
+#     for i in range(len(num2)-1,0,-1):
+#         number1=0
+#         for j in range(len(num1)-1,0,-1):
+#             print(num1[i],num2[i])
+#             sum1=0
+#             carry=0
+#             z=int(num1[i]) * int(num2[j])
+#             if z> 10:
+#                 carry= z%10
+#                 sum1= z//10
+#                 print(carry,sum1)
+#             else:
+#                 carry = z
+#             number1+=carry
+#             print(number1)
 
 
-print(multiply('123','456'))
+# print(multiply('123','456'))
+
+def mostCommonWord(paragraph, banned):
+    word_dic={}
+    paragraph=paragraph.lower()
+    paragraph = "".join(paragraph.split("."))
+    paragraph = "".join(paragraph.split(","))
+    print(paragraph)
+    # =paragraph.strip()
+    words=paragraph.split()
+    for i in words:
+        if i not in banned:
+            if i in word_dic:
+                word_dic[i]= word_dic[i] + 1
+            word_dic[i] = 1
+    return word_dic
+
+
+paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
+banned = ["hit"]
+
+print(mostCommonWord(paragraph, banned))
