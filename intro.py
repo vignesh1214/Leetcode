@@ -379,23 +379,39 @@
 
 # print(multiply('123','456'))
 
-def mostCommonWord(paragraph, banned):
-    word_dic={}
-    paragraph=paragraph.lower()
-    paragraph = "".join(paragraph.split("."))
-    paragraph = "".join(paragraph.split(","))
-    print(paragraph)
-    # =paragraph.strip()
-    words=paragraph.split()
-    for i in words:
-        if i not in banned:
-            if i in word_dic:
-                word_dic[i]= word_dic[i] + 1
-            word_dic[i] = 1
-    return word_dic
+# def mostCommonWord(paragraph, banned):
+#     word_dic={}
+#     paragraph=paragraph.lower()
+#     paragraph = "".join(paragraph.split("."))
+#     paragraph = "".join(paragraph.split(","))
+#     print(paragraph)
+#     # =paragraph.strip()
+#     words=paragraph.split()
+#     for i in words:
+#         if i not in banned:
+#             if i in word_dic:
+#                 word_dic[i]= word_dic[i] + 1
+#             word_dic[i] = 1
+#     return word_dic
 
 
-paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
-banned = ["hit"]
+# paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
+# banned = ["hit"]
 
-print(mostCommonWord(paragraph, banned))
+# print(mostCommonWord(paragraph, banned))
+
+
+def findRelativeRanks(nums):
+    n=sorted(nums, reverse=True)
+    print(n)
+    medal=['Gold medal' , 'Silver medal','Bronze medal']
+    for i in range(len(n)):
+        j=nums.index(n[i])
+        if i<=2:
+            n[i]=medal[i]
+        else: n[i] = str(i+1)
+        nums[j]=n[i]
+    return nums
+
+
+print(findRelativeRanks([1,2,4,3,7]))
