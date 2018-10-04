@@ -401,17 +401,52 @@
 # print(mostCommonWord(paragraph, banned))
 
 
-def findRelativeRanks(nums):
-    n=sorted(nums, reverse=True)
-    print(n)
-    medal=['Gold medal' , 'Silver medal','Bronze medal']
-    for i in range(len(n)):
-        j=nums.index(n[i])
-        if i<=2:
-            n[i]=medal[i]
-        else: n[i] = str(i+1)
-        nums[j]=n[i]
-    return nums
+# def findRelativeRanks(nums):
+#     n=sorted(nums, reverse=True)
+#     print(n)
+#     medal=['Gold medal' , 'Silver medal','Bronze medal']
+#     for i in range(len(n)):
+#         j=nums.index(n[i])
+#         if i<=2:
+#             n[i]=medal[i]
+#         else: n[i] = str(i+1)
+#         nums[j]=n[i]
+#     return nums
 
 
-print(findRelativeRanks([1,2,4,3,7]))
+# print(findRelativeRanks([1,2,4,3,7]))
+
+# def licenseKeyFormatting(S, K):
+#     s=S.split()
+#     p=''
+#     print(s)
+#     for i in range(0,k):
+#         p+=s[i]
+
+
+# def findDisappearedNumbers(nums):
+#     i=1
+#     l=len(nums)
+#     nums=list(set(nums))
+#     while i < l+1:
+#         if i in nums:
+#             nums.remove(i)
+#         else:
+#             nums.append(i)
+#         i+=1
+#     return nums
+
+# print(findDisappearedNumbers([1,2,3,4,3,7,2,8]))
+
+def compareVersion(version1, version2):
+    if '.' in version1:
+        version1.replace(char,'') for char in version1 if char in "?.!/;:"
+    y=[version2.replace(char,'') for char in version2 if char in "?.!/;:"]
+    print(x,y)
+    if x > y:
+        return 1
+    else:
+        return -1
+
+
+print(compareVersion("1","0"))
