@@ -379,27 +379,53 @@
 
 # print(multiply('123','456'))
 
-# def mostCommonWord(paragraph, banned):
-#     word_dic={}
-#     paragraph=paragraph.lower()
-#     paragraph = "".join(paragraph.split("."))
-#     paragraph = "".join(paragraph.split(","))
-#     print(paragraph)
-#     # =paragraph.strip()
-#     words=paragraph.split()
-#     for i in words:
-#         if i not in banned:
-#             if i in word_dic:
-#                 word_dic[i]= word_dic[i] + 1
-#             word_dic[i] = 1
-#     return word_dic
+def mostCommonWord(paragraph, banned):
+    paragraph=paragraph.lower()
+    # paragraph=' '.join(e for e in paragraph if e.isalnum())
+    # paragraph =paragraph.replace(',',' ')
+    # paragraph =paragraph.replace('?',' ')
+    # paragraph =paragraph.replace(':',' ')
+    # paragraph =paragraph.replace('!',' ')
+    # paragraph =paragraph.replace('.',' ')
+    words = paragraph.split(' ')
+    # words = list(filter(',', words))
+    print(words)
+    word_dic={}
+    # paragraph=paragraph.lower()
+    # words=paragraph.replace('!',',').replace(' ')
+    # paragraph = "".join(paragraph.split("."))
+    # paragraph = "".join(paragraph.split(","))
+    # paragraph = "".join(paragraph.split("!"))
+    # words = [x.strip() for x in paragraph.split(',')]
+    # words=paragraph.split(' ')
+    print(paragraph)
+    # # =paragraph.strip()
+    for i in words:
+        if i not in banned:
+            if i in word_dic:
+                word_dic[i]+=1
+            else:
+                word_dic[i] = 1
+    return [key for key,value in word_dic.items() if value == max(word_dic.values())][0]
+
+paragraph="Bob hit a ball, the hit BALL flew far after it was hit."
+banned = ["hit"]
+# paragraph = "a, a, a, a, b,b,b,c, c"
+# banned = ["a"]
+
+print(mostCommonWord(paragraph, banned))
 
 
-# paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
-# banned = ["hit"]
 
-# print(mostCommonWord(paragraph, banned))
+# a={}
+# l=[1,2,3,4,2,3,1,2,5,4]
+# for i in l:
+#     if i in a:
+#         a[i] += 1
+#     else:
+#         a[i] = 1
 
+# print(a)
 
 # def findRelativeRanks(nums):
 #     n=sorted(nums, reverse=True)
@@ -438,15 +464,37 @@
 
 # print(findDisappearedNumbers([1,2,3,4,3,7,2,8]))
 
-def compareVersion(version1, version2):
-    if '.' in version1:
-        version1.replace(char,'') for char in version1 if char in "?.!/;:"
-    y=[version2.replace(char,'') for char in version2 if char in "?.!/;:"]
-    print(x,y)
-    if x > y:
-        return 1
-    else:
-        return -1
+# def compareVersion(version1, version2):
+#     if '.' in version1:
+#         version1.replace(char,'') for char in version1 if char in "?.!/;:"
+#     y=[version2.replace(char,'') for char in version2 if char in "?.!/;:"]
+#     print(x,y)
+#     if x > y:
+#         return 1
+#     else:
+#         return -1
 
 
-print(compareVersion("1","0"))
+# print(compareVersion("1","0"))
+
+# def containsDuplicate(nums):
+#     a= set(nums)
+#     return len(nums)> len(a)
+
+
+# print(containsDuplicate([1,2,3,4,5]))
+
+# def numJewelsInStones(J, S):
+#     c=0
+#     for i in S:
+#         if i in J:
+#             c+=1
+#     return c
+
+
+# print(numJewelsInStones("aA", "aAAbbbb"))
+
+## CTCI book
+
+
+#1.1
