@@ -379,41 +379,41 @@
 
 # print(multiply('123','456'))
 
-def mostCommonWord(paragraph, banned):
-    paragraph=paragraph.lower()
-    # paragraph=' '.join(e for e in paragraph if e.isalnum())
-    # paragraph =paragraph.replace(',',' ')
-    # paragraph =paragraph.replace('?',' ')
-    # paragraph =paragraph.replace(':',' ')
-    # paragraph =paragraph.replace('!',' ')
-    # paragraph =paragraph.replace('.',' ')
-    words = paragraph.split(' ')
-    # words = list(filter(',', words))
-    print(words)
-    word_dic={}
-    # paragraph=paragraph.lower()
-    # words=paragraph.replace('!',',').replace(' ')
-    # paragraph = "".join(paragraph.split("."))
-    # paragraph = "".join(paragraph.split(","))
-    # paragraph = "".join(paragraph.split("!"))
-    # words = [x.strip() for x in paragraph.split(',')]
-    # words=paragraph.split(' ')
-    print(paragraph)
-    # # =paragraph.strip()
-    for i in words:
-        if i not in banned:
-            if i in word_dic:
-                word_dic[i]+=1
-            else:
-                word_dic[i] = 1
-    return [key for key,value in word_dic.items() if value == max(word_dic.values())][0]
+# def mostCommonWord(paragraph, banned):
+#     paragraph=paragraph.lower()
+#     paragraph=' '.join(e for e in paragraph if e.isalnum())
+#     paragraph =paragraph.replace(',',' ')
+#     paragraph =paragraph.replace('?',' ')
+#     paragraph =paragraph.replace(':',' ')
+#     paragraph =paragraph.replace('!',' ')
+#     paragraph =paragraph.replace('.',' ')
+#     words = paragraph.split(' ')
+#     # words = list(filter(',', words))
+#     print(words)
+#     word_dic={}
+#     # paragraph=paragraph.lower()
+#     # words=paragraph.replace('!',',').replace(' ')
+#     # paragraph = "".join(paragraph.split("."))
+#     # paragraph = "".join(paragraph.split(","))
+#     # paragraph = "".join(paragraph.split("!"))
+#     # words = [x.strip() for x in paragraph.split(',')]
+#     # words=paragraph.split(' ')
+#     print(paragraph)
+#     # # =paragraph.strip()
+#     for i in words:
+#         if i not in banned:
+#             if i in word_dic:
+#                 word_dic[i]+=1
+#             else:
+#                 word_dic[i] = 1
+#     return [key for key,value in word_dic.items() if value == max(word_dic.values())][0]
 
-paragraph="Bob hit a ball, the hit BALL flew far after it was hit."
-banned = ["hit"]
-# paragraph = "a, a, a, a, b,b,b,c, c"
-# banned = ["a"]
+# paragraph="Bob hit a ball, the hit BALL flew far after it was hit."
+# banned = ["hit"]
+# # paragraph = "a, a, a, a, b,b,b,c, c"
+# # banned = ["a"]
 
-print(mostCommonWord(paragraph, banned))
+# print(mostCommonWord(paragraph, banned))
 
 
 
@@ -494,7 +494,43 @@ print(mostCommonWord(paragraph, banned))
 
 # print(numJewelsInStones("aA", "aAAbbbb"))
 
-## CTCI book
+# def selfDividingNumbers(left, right):
+#     a=[]
+#     for i in range(left, right):
+#         j=0
+#         while(i>0):
+#             j = i%10
+#             if (i%j) == 0:
+#                 a.append(i)
+#             i= i/10
+#             # print(i)
+#             i=i/10
+#     return a
 
 
-#1.1
+
+# print(selfDividingNumbers(1,22))
+
+#682
+def calPoints(ops):
+    final_sum=[]
+    for i in ops:
+        if i.lstrip('-').isdigit():
+            final_sum.append(int(i))
+        if i == 'C':
+            final_sum.pop()
+        if i == 'D':
+            final_sum.append(int(final_sum[-1])* 2)
+        if i == '+':
+            print(final_sum)
+            a=0
+            for j in range(2):
+                if final_sum:
+                    a+=final_sum[-1-j]
+            final_sum.append(a)
+
+    return sum(final_sum)
+
+
+
+print(calPoints(["5","-2","4","C","D","9","+","+"]))
