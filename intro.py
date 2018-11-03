@@ -512,25 +512,59 @@
 # print(selfDividingNumbers(1,22))
 
 #682
-def calPoints(ops):
-    final_sum=[]
-    for i in ops:
-        if i.lstrip('-').isdigit():
-            final_sum.append(int(i))
-        if i == 'C':
-            final_sum.pop()
-        if i == 'D':
-            final_sum.append(int(final_sum[-1])* 2)
-        if i == '+':
-            print(final_sum)
-            a=0
-            for j in range(2):
-                if final_sum:
-                    a+=final_sum[-1-j]
-            final_sum.append(a)
+# def calPoints(ops):
+#     final_sum=[]
+#     for i in ops:
+#         if i.lstrip('-').isdigit():
+#             final_sum.append(int(i))
+#         if i == 'C':
+#             final_sum.pop()
+#         if i == 'D':
+#             final_sum.append(int(final_sum[-1])* 2)
+#         if i == '+':
+#             a=0
+#             for j in range(2):
+#                 if final_sum:
+#                     a+=final_sum[-1-j]
+#             final_sum.append(a)
+#     return sum(final_sum)
 
-    return sum(final_sum)
+# print(calPoints(["5","-2","4","C","D","9","+","+"]))
+
+#496
+# def nextGreaterElement(findNums, nums):
+#     new_arr=[]
+#     for i in range(len(findNums)):
+#         for j in nums:
+#             f=0
+#             print(nums[i+1:])
+#             if j > findNums[i]:
+#                 new_arr.append(j)
+#                 f=1
+#                 break
+#         if f==0: new_arr.append(-1)
+#     return new_arr
+
+
+# print(nextGreaterElement([4,1,2],[1,3,4,2]))
+
+def backspaceCompare(S, T):
+    final_s=[]
+    final_t=[]
+    for i in S:
+        if i != '#':
+            final_s.append(i)
+        else:
+            if final_s:
+                final_s.pop()
+    for i in T:
+        if i != '#':
+            final_t.append(i)
+        else:
+            if final_t:
+                final_t.pop()
+    return (final_s==final_t)
 
 
 
-print(calPoints(["5","-2","4","C","D","9","+","+"]))
+print(backspaceCompare("ab#c", "ad#c"))
