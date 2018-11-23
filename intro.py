@@ -1,4 +1,4 @@
-# Leetcode
+    # Leetcode
 
 # def findNumber(l, r):
 #     a=[]
@@ -548,23 +548,184 @@
 
 # print(nextGreaterElement([4,1,2],[1,3,4,2]))
 
-def backspaceCompare(S, T):
-    final_s=[]
-    final_t=[]
-    for i in S:
-        if i != '#':
-            final_s.append(i)
-        else:
-            if final_s:
-                final_s.pop()
-    for i in T:
-        if i != '#':
-            final_t.append(i)
-        else:
-            if final_t:
-                final_t.pop()
-    return (final_s==final_t)
+# def backspaceCompare(S, T):
+#     final_s=[]
+#     final_t=[]
+#     for i in S:
+#         if i != '#':
+#             final_s.append(i)
+#         else:
+#             if final_s:
+#                 final_s.pop()
+#     for i in T:
+#         if i != '#':
+#             final_t.append(i)
+#         else:
+#             if final_t:
+#                 final_t.pop()
+#     return (final_s==final_t)
 
 
 
-print(backspaceCompare("ab#c", "ad#c"))
+# print(backspaceCompare("ab#c", "ad#c"))
+
+# def dailyTemperatures(T):
+#     dict={}
+#     s=[]
+#     for i in range(len(T)):
+#         dict[i] =T[i]
+#     a=sorted(T)
+#     print(a)
+#     j=0
+#     for i in range(1,len(a)):
+#         x=a[i]
+#         y=a[j]
+#         print(x,y)
+#         if dict.get(i) > dict.get(j):
+#             s.append(i-j)
+#             j+=1
+#     return s
+
+# print(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))
+
+# def circleOfNumbers(n, firstNumber):
+#     j=360/n
+#     k=j*firstNumber
+#     if firstNumber == n/2:return 0
+#     if 36%n == 0:
+#         return n-firstNumber
+#     else:return (n-1) - firstNumber
+
+# print(circleOfNumbers(10,2))
+
+#853 Car fleet
+
+# for f, b in zip(foo, bar):
+#     print(f, b)
+# def carFleet(target, position, speed):
+#     a=[]
+#     for (b, c) in zip(position,speed):
+#         d=[]
+#         for i in range(b,target,c):
+#             d.append(i+c)
+#         a.append(d)
+#     print(a)
+#     k={}
+#     j=0
+#     for i in range(target):
+#         y=[]
+#         for j in range(len(a)):
+#             # k[i]=y.append(x)
+#             # print(i,j)
+#             try:
+#                 x= a[j][i]
+#                 y.append((j,x))
+#                 print(x)
+#             except:
+#                 pass
+#         k[i]=y
+#         print(y)
+#     return k
+
+# position = [10,8,0,5,3]
+# speed = [2,4,1,1,3]
+# target = 12
+
+
+# print(carFleet(target,position,speed))
+
+
+# def findMin(nums):
+#     return min(nums)
+
+
+# def findMin(self, nums):
+# def maximumSwap(num):
+#     c=list(str(num))
+#     for i in range(len(c)):
+#         # print(max(c[i+1:]) , c[i+1:] , c[i])
+#         try:
+#             if max(c[i+1:]) >= c[i]:
+#                 d=c[i+1:]
+#                 print(d.index(max(d)))
+#                 a, b = c.index(c[i]), d.index(max(d))
+#                 # print(a,b+i+1)
+#                 # print(c[a],c[b+1+i])
+#                 c[b+i+1], c[a] = c[a], c[b+1+i]
+#                 break
+#             else: pass
+#         except : pass
+#     c = [int(i) for i in c]
+#     return int(''.join(map(str,c)))
+
+# print(maximumSwap(9973))
+
+# def addDigits(num):
+#     a=0
+#     sum_f = num
+#     while len(str(sum_f)) != 1:
+#         a += num%10
+#         # print(a)
+#         num=num//10
+#         # print(num)
+#         if num == 0:
+#             num = a
+#             sum_f =a
+#             a=0
+#             # print(num,a, sum_f)
+#         else:continue
+
+#     return sum_f
+
+
+# print(addDigits(358))
+
+# def fizzBuzz(n):
+#     l=[]
+#     for i in range(1,n+1):
+#         if i % 3 == 0 and i% 5 == 0:
+#             l.append('FizzBuzz')
+#         elif i % 3 ==0 :
+#             l.append('Fizz')
+#         elif i % 5 ==0:
+#             l.append('Buzz')
+#         else:
+#             l.append(i)
+#     return l
+
+# print(fizzBuzz(15))
+
+# def countSmaller(nums):
+#     a=[]
+#     for i in range(len(nums)):
+#         count=0
+#         for j in nums[i:]:
+#             if j < nums[i]:count+=1
+#         a.append(count)
+#     return a
+
+# print(countSmaller([5,2,6,1]))
+
+# def rob(nums):
+#     a,b=0,0
+#     for i in range(0,len(nums),2):
+#         a+=nums[i]
+#     for i in range(1,len(nums),2):
+#         b+=nums[i]
+#     return max(a,b)
+
+# print(rob([2,7,9,3,1]))
+
+def maxProfit(prices):
+    try:
+        a , b = prices.index(min(prices)) , prices.index(max(prices[prices.index(min(prices)):]))
+        return prices[b] - prices[a]
+    except:
+        return None
+
+
+
+
+
+print(maxProfit([2,4,1]))
+
